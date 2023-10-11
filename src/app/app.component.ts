@@ -37,7 +37,14 @@ export class AppComponent implements OnInit {
   }
 
   openAddEditPersonForm() {
-    this._dialog.open(PersonAddEditComponent);
+    const dialogRef = this._dialog.open(PersonAddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getPersons();
+        }
+      }
+    })
   }
 
   getPersons() {
@@ -60,5 +67,17 @@ export class AppComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  deletePerson(id: number) {
+    this._empService.deletePerson(id).subscribe({
+      next: (res) => {
+        alert('Se ha eliminado la Persona con éxito');
+        this.getPersons();
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    })
   }
 }

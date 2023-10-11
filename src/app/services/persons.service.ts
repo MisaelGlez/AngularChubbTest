@@ -16,4 +16,8 @@ export class PersonsService {
   getPersons(): Observable<any> {
     return this._http.get('http://localhost:3000/persons');
   }
+
+  deletePerson(id: number): Observable<any> {
+    return this._http.delete(`http://localhost:3000/persons/${id}`)
+  }
 }
