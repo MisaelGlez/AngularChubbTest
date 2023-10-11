@@ -13,6 +13,10 @@ export class PersonsService {
     return this._http.post('http://localhost:3000/persons', data);
   }
 
+  updatePerson(id: number, data: any): Observable<any> {
+    return this._http.put(`http://localhost:3000/persons/${id}`, data);
+  }
+
   getPersons(): Observable<any> {
     return this._http.get('http://localhost:3000/persons');
   }

@@ -16,22 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "persons": [
-    {
-      "name": "Víctor Hernández",
-      "address": "1a Calle 20",
-      "email": "victor.hernandez@gmail.com",
-      "phone": "5512345678",
-      "birthdate": "2010-08-01T06:00:00.000Z",
-      "id": 1
-    },
-    {
-      "name": "Saúl Alcantar",
-      "address": "2 calle 12",
-      "email": "saul.alcantar@gmail.com",
-      "phone": "5597864521",
-      "birthdate": "1987-05-06T06:00:00.000Z",
-      "id": 2
-    }
-  ]
+  "persons": []
 }

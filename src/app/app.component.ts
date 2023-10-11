@@ -80,4 +80,18 @@ export class AppComponent implements OnInit {
       },
     })
   }
+
+  openEditPersonForm(data: any) {
+    const dialogRef = this._dialog.open(PersonAddEditComponent, {
+      data,
+    });
+    
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getPersons();
+        }
+      }    
+    })
+  }
 }
